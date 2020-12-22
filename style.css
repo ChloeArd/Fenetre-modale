@@ -12,11 +12,11 @@ html {
 body {
     width: 100%;
     font-family: 'Montserrat', sans-serif;
+    background-color: gray;
 }
 
 #window {
     width: 100%;
-    display: none;
 }
 
 #modal-window{
@@ -54,6 +54,7 @@ body {
     height: 60%;
     padding: 30px;
     font-size: 15px;
+    background-color: white;
 }
 
 #case{
@@ -73,8 +74,12 @@ body {
     font-size: 12px;
 }
 
-#cancel{
+#cancel, #closeWindow{
     background-color: red;
     color: white;
     width: 15%;
+}
+
+#closeWindow{
+    margin-left: 10px;
 }

@@ -1,3 +1,4 @@
+let myWindow;
 function Modal(titre, texte, label){
     this.titre = titre;
     this.texte = texte;
@@ -22,20 +23,34 @@ function Modal(titre, texte, label){
         let window = document.getElementById("window");
         window.style.display = "block";
     }
+
+    this.open = function (){
+        document.getElementById("ok").addEventListener("click", function (){
+            let features = "menuba=no, scrollbars=yes, width=500, height=500, status=no, toolbar=no";
+            myWindow = window.open("https://developer.mozilla.org/fr/", '', features)
+        })
+    }
     
-    this.close = function (id){
+    this.closeModal = function (id){
         document.getElementById(id).addEventListener("click", function (){
             let window = document.getElementById("window");
             window.style.display = "none";
+            document.body.style.backgroundColor = "white";
+        })
+    }
+    this.close = function () {
+        document.getElementById("closeWindow").addEventListener("click", function () {
+            myWindow.close();
         })
     }
 }
 
-let modal1 = new Modal("Modal Window", "Are you sure want to download this modal box?<br>\n" + "Click 'OK' to start downloading.", "Agree ou terms & conditions!")
+let modal1 = new Modal("Modal Window", "Voulez vous accédez au site de la MDN?<br>\n" + "Click 'OK' pour y accéder.", "Agree ou terms & conditions!")
 modal1.ajoutLabel();
 modal1.ajoutParagraph();
 modal1.ajoutTitre();
 modal1.ajoutModal();
-modal1.close("close");
-new modal1.close("ok");
-new modal1.close("cancel");
+modal1.closeModal("close");
+new modal1.closeModal("cancel");
+modal1.open();
+modal1.close();
