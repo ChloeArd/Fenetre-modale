@@ -16,6 +16,7 @@ body {
 
 #window {
     width: 100%;
+    display: none;
 }
 
 #modal-window{
