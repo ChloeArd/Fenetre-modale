@@ -45,7 +45,7 @@ function Modal(titre, texte, label){
     }
 }
 
-let modal1 = new Modal("Modal Window", "Voulez vous accédez au site de la MDN?<br>\n" + "Click 'OK' pour y accéder.", "Agree ou terms & conditions!")
+let modal1 = new Modal("Modal Window", "Voulez vous accédez au site de la MDN?<br>\n" + "Click 'OK' pour y accéder.", "Acceptez nos termes et conditions!")
 modal1.ajoutLabel();
 modal1.ajoutParagraph();
 modal1.ajoutTitre();
